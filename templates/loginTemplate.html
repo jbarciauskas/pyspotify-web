@@ -1,0 +1,38 @@
+$def with (form)
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $$(document).ready(function() {
+                // do stuff when DOM is ready
+                $$(function ()
+                {
+                    var i = setInterval(function ()
+                    {
+                        $$.ajax(
+                        {
+                            url: "/status", // JSON_URL is a global variable
+                            dataType: "json",
+                            error: function() {
+                            },
+                            success: function (currentSong)
+                            {
+                                window.location.href = '/';
+                            }
+                        });
+                    }, 10000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+<form name="main" method="post"> 
+$if not form.valid: <p class="error">Error logging into Pandora</p>
+$:form.render()
+</form>
+</body>
+</html>

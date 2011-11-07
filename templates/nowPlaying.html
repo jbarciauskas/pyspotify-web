@@ -1,0 +1,8 @@
+$def with (track)
+<h3>Now playing</h3>
+
+<div class="playlist">
+    <ul>
+        <li>$'{0} - {1}'.format(track.artists()[0].name(),track.name())</li>
+    </ul>
+</div>

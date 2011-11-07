@@ -1,0 +1,9 @@
+$def with (results)
+<h3>Search results</h3>
+
+<div class="playlist">
+    <ul>
+        $for result in results:
+        <li><a href="/play/$result['link']">$result['name']</a>
+    </ul>
+</div>

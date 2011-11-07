@@ -1,0 +1,9 @@
+$def with (playlistId, playlist)
+<h3>Tracks in $playlist.name()</h3>
+
+<div class="playlist">
+    <ul>
+        $for i, track in enumerate(playlist):
+        <li><a href="/play/$playlistId/$i">$u'{0}. {1} - {2}'.format(i, track.artists()[0].name(),track.name())</a></li>
+    </ul>
+</div>
